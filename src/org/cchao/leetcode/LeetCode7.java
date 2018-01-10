@@ -25,7 +25,7 @@ public class LeetCode7 {
             length = length - 1;
         }
         //整数溢出
-        if (result == 2147483647) {
+        if (result == Integer.MAX_VALUE) {
             return 0;
         }
         if (isNegative) {
