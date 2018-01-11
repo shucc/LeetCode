@@ -13,9 +13,9 @@ public class LeetCode2 {
         ListNode listNode1 = createNode(new int[]{2, 4, 3});
         ListNode listNode2 = createNode(new int[] {5, 6, 4});
 
-        //ListNode resultNodeC = addTwoNumbers(listNodeA, listNodeB);
+        ListNode resultNodeC = addTwoNumbers(listNodeA, listNodeB);
         ListNode resultNode3 = addTwoNumbers(listNode1, listNode2);
-        //System.out.println(getNodeNumber(resultNodeC));
+        System.out.println(getNodeNumber(resultNodeC));
         System.out.println(getNodeNumber(resultNode3));
     }
 
