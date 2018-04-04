@@ -9,24 +9,35 @@ public class LeetCode6 {
     public static void main(String[] args) {
         System.out.println(convert("PAYPALISHIRING", 3));
         System.out.println(convert("ABC", 2));
+        System.out.println(convert("ABCDE", 3));
+        System.out.println(convert("ABCDE", 4));
     }
 
     public static String convert(String s, int numRows) {
+        if (1 == numRows || numRows >= s.length()) {
+            return s;
+        }
         char[] stringArray = s.toCharArray();
-        String[][] resultArray = new String[numRows][stringArray.length * 2 / (numRows + 1)];
-        for (int i = 0; i < numRows; i++) {
-            boolean isMiddle = (i == numRows - 2);
-            for (int j = 0; j < resultArray[i].length; j++) {
-                if (isMiddle) {
-                    int size = i + numRows * j;
-                    if (size < stringArray.length) {
-                        resultArray[i][j] = String.valueOf(stringArray[size]);
+        int length = stringArray.length / (numRows - 1) + 1;
+        String[][] resultArray = new String[numRows][length];
+        int index = 0;
+        for (int i = 0; i < length; i++) {
+            if (i % 2 == 0) {
+                for (int j = 0; j < numRows; j++) {
+                    if (index < stringArray.length) {
+                        resultArray[j][i] = String.valueOf(stringArray[index]);
                     }
-                } else if (j % 2 == 0) {
-                    int size = i + (numRows + 1) * (j / 2);
-                    if (size < stringArray.length) {
-                        resultArray[i][j] = String.valueOf(stringArray[size]);
+                    index++;
+                }
+            } else {
+                for (int j = numRows - 1; j >= 0; j--) {
+                    if (j == 0 || j == numRows - 1) {
+                        continue;
                     }
+                    if (index < stringArray.length) {
+                        resultArray[j][i] = String.valueOf(stringArray[index]);
+                    }
+                    index++;
                 }
             }
         }
