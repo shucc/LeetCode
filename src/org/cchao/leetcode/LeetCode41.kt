@@ -27,12 +27,10 @@ object LeetCode41 {
         for (num in positiveList) {
             positiveArray[num] = 1
         }
-        var i = 0
-        while (i < positiveArray.size) {
+        for (i in 0..positiveArray.size - 1) {
             if (positiveArray[i] != 1) {
                 return i
             }
-            i++
         }
         return positiveArray.size
     }
