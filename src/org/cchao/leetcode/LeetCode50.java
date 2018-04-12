@@ -8,11 +8,23 @@ public class LeetCode50 {
 
     public static void main(String[] args) {
         System.out.println(String.valueOf(myPow(2.0000, 2)) + "-->" + myPow(2.10000, 3));
+        System.out.println(String.valueOf(myPow(0.00001, 2147483647)));
+        System.out.println(String.valueOf(myPow(2.0000, -2147483648)));
+        System.out.println(String.valueOf(myPow(-1.0000, -2147483648)));
     }
 
     public static double myPow(double x, int n) {
         if (0 == x) {
             return 0;
+        }
+        if (1 == x) {
+            return 1;
+        }
+        if (-1 == x) {
+            if (n == Integer.MIN_VALUE) {
+                return 1;
+            }
+            return -1;
         }
         if (0 == n) {
             return 1;
@@ -20,17 +32,21 @@ public class LeetCode50 {
         if (1 == n) {
             return x;
         }
-        double result = (n % 2 == 0 ? 1 : x);
-        boolean isNegative = n < 0;
-        n = Math.abs(n);
-        int i = (n % 2 == 0 ? 0 : 1);
-        while (i < n) {
-            result *= (x * x);
-            i += 2;
+        if (-1 == n) {
+            return 1 / x;
         }
-        if (isNegative) {
-            return 1 / result;
+        boolean isNegative = false;
+        if (n < 0) {
+            if (n == Integer.MIN_VALUE) {
+                return 0;
+            }
+            n = -n;
+            isNegative = true;
         }
-        return result;
+        double result = myPow(x * x, n / 2);
+        if (n % 2 != 0) {
+            result *= x;
+        }
+        return isNegative ? (1 / result) : result;
     }
 }
