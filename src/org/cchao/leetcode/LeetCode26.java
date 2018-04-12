@@ -1,5 +1,7 @@
 package org.cchao.leetcode;
 
+import java.lang.reflect.Array;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,10 +17,15 @@ public class LeetCode26 {
     }
 
     public static int removeDuplicates(int[] nums) {
-        Set<Integer> result = new HashSet<>();
-        for (int i = 0; i < nums.length; i++) {
-            result.add(nums[i]);
+        int i = 0;
+        for (int j = 0; j < nums.length; j++) {
+            if (j > 0) {
+                if (nums[j] != nums[i]) {
+                    i++;
+                    nums[i] = nums[j];
+                }
+            }
         }
-        return result.size();
+        return i + 1;
     }
 }
