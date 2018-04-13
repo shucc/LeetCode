@@ -7,8 +7,8 @@ package org.cchao.leetcode;
 public class LeetCode69 {
 
     public static void main(String args[]) {
-        System.out.println(String.valueOf(mySqrt(4)) + "-->" + mySqrt(8));
-        System.out.println(String.valueOf(mySqrt(2147483647)));
+        System.out.println(String.valueOf(mySqrt2(4)) + "-->" + mySqrt(8));
+        System.out.println(String.valueOf(mySqrt2(2147483647)));
     }
 
     public static int mySqrt(int x) {
@@ -34,5 +34,15 @@ public class LeetCode69 {
             }
         }
         return 1;
+    }
+
+    public static int mySqrt2(int x) {
+        double upperBound = x;
+        double lowerBound = 1;
+        while ((upperBound - lowerBound) > 0.00001) {
+            upperBound = (upperBound + lowerBound) / 2;
+            lowerBound = x / upperBound;
+        }
+        return (int) upperBound;
     }
 }
