@@ -22,7 +22,7 @@ public class LeetCode104 {
         return 1 + (leftDepth > rightDepth ? leftDepth : rightDepth);
     }
 
-    public class TreeNode {
+    private class TreeNode {
 
         int val;
 

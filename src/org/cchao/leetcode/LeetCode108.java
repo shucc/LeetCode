@@ -9,7 +9,7 @@ public class LeetCode108 {
     public static void main(String args[]) {
 
     }
-    
+
     public TreeNode sortedArrayToBST(int[] nums) {
         if (0 == nums.length) {
             return null;
@@ -26,11 +26,14 @@ public class LeetCode108 {
         resultNode.right = recurse(nums, index * 2 + 2);
         return resultNode;
     }
-    
-    public class TreeNode {
+
+    private class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode(int x) { val = x; }
+
+        TreeNode(int x) {
+            val = x;
+        }
     }
 }
