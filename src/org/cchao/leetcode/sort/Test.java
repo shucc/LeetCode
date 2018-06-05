@@ -23,16 +23,17 @@ public class Test {
         for (int i = 0; i < temp.size(); i++) {
             array[i] = temp.get(i);
         }
-        printArray(array);
-        System.out.println("");
+        //printArray(array);
+        //System.out.println("");
         long preTime = System.currentTimeMillis();
         //bubbleSort(array);
         //choiceSort(array);
         //choiceSort2(array);
         //Arrays.sort(array);
         quickSort(array, 0, array.length - 1);
+        //insertionSort(array);
         System.out.println(String.valueOf(System.currentTimeMillis() - preTime));
-        printArray(array);
+        //printArray(array);
     }
 
     private static void printArray(int[] array) {
@@ -136,6 +137,27 @@ public class Test {
         }
         array[low] = key;
         return low;
+    }
+
+    /**
+     * 插入排序
+     * @param array
+     */
+    private static void insertionSort(int[] array) {
+        int temp;
+        int j;
+        for (int i = 1; i < array.length; i++) {
+            temp = array[i];
+            j = i - 1;
+            for (j = i - 1; j >= 0; j--) {
+                if (array[j] > temp) {
+                    array[j + 1] = array[j];
+                } else {
+                    break;
+                }
+            }
+            array[j + 1] = temp;
+        }
     }
 
     /**
