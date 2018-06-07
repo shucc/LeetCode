@@ -1,7 +1,6 @@
 package org.cchao.leetcode.sort;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -141,6 +140,7 @@ public class Test {
 
     /**
      * 插入排序
+     *
      * @param array
      */
     private static void insertionSort(int[] array) {
