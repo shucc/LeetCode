@@ -7,6 +7,7 @@ import java.util.List;
 /**
  * Created by shucc on 18/6/8.
  * cc@cchao.org
+ * Top K Frequent Elements
  */
 public class LeetCode347 {
 
@@ -24,7 +25,26 @@ public class LeetCode347 {
                 frequentMap.put(value, frequentMap.get(value) + 1);
             }
         }
+        List<Integer>[] listArray = new List[nums.length + 1];
+        for (int key : frequentMap.keySet()) {
+            int count = frequentMap.get(key);
+            if (null == listArray[count]) {
+                ArrayList<Integer> temp = new ArrayList<>();
+                temp.add(key);
+                listArray[count] = temp;
+            } else {
+                listArray[count].add(key);
+            }
+        }
         List<Integer> result = new ArrayList<>();
+        for (int i = listArray.length - 1; i >= 0; i--) {
+            if (null != listArray[i]) {
+                result.addAll(listArray[i]);
+            }
+            if (result.size() >= k) {
+                break;
+            }
+        }
         return result;
     }
 }

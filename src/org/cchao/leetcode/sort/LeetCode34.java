@@ -1,14 +1,15 @@
-package org.cchao.leetcode;
+package org.cchao.leetcode.sort;
 
 /**
  * Created by shucc on 18/1/15.
  * cc@cchao.org
+ * 搜索范围
  */
 public class LeetCode34 {
 
     public static void main(String args[]) {
-        int[] temp = new int[] {5, 7, 7, 8, 8, 10};
-        int[] result = searchRange(temp, 9);
+        int[] temp = new int[]{5, 7, 7, 8, 8, 10};
+        int[] result = searchRange(temp, 8);
         System.out.println(String.valueOf(result[0]) + "-->" + result[1]);
     }
 
@@ -29,6 +30,6 @@ public class LeetCode34 {
                 }
             }
         }
-        return new int[] {start, end};
+        return new int[]{start, end};
     }
 }
