@@ -1,0 +1,20 @@
+package org.cchao.leetcode.first.binarytree;
+
+/**
+ * Created by shucc on 18/5/7.
+ * cc@cchao.org
+ */
+public class TreeLinkNode {
+
+    int val;
+
+    TreeLinkNode left;
+
+    TreeLinkNode right;
+
+    TreeLinkNode next;
+
+    public TreeLinkNode(int val) {
+        this.val = val;
+    }
+}
