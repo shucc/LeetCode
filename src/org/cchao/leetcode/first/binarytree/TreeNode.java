@@ -4,7 +4,7 @@ package org.cchao.leetcode.first.binarytree;
  * Created by shucc on 18/4/20.
  * cc@cchao.org
  */
-public class TreeNode {
+class TreeNode {
 
     int val;
 
