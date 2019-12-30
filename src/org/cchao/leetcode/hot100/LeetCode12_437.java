@@ -2,7 +2,6 @@ package org.cchao.leetcode.hot100;
 
 public class LeetCode12_437 {
 
-
     public int pathSum(TreeNode root, int sum) {
         if (null == root) {
             return 0;
