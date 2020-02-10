@@ -1,4 +1,4 @@
-package org.cchao.leetcode.first.sort;
+package org.cchao.leetcode.sort;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +13,7 @@ public class Test {
         //int[] test = new int[]{23, 43, 1, 324, 54, 13, 545, 3, 6, 1, 45};
         int[] test = new int[]{32, 5, 645, 12, 99, 34234234, 3, 3, 5, 66, 1, 34, 56, 43, 54, 1, 333, 4545, 64, 565, 123, 345, 65, 1, 333, 1, 343254325, 5454, 12, 5456, -1, -43, 53, 0, -23424, 1321, 45, 66, 768, 12, 767, 34, 7687, 3234, 4, 12, 454, 12, 5, 0, -98, 454, 12, 545};
         List<Integer> temp = new ArrayList<>();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 1; i++) {
             for (int j = 0; j < test.length; j++) {
                 temp.add(test[j]);
             }
@@ -22,17 +22,18 @@ public class Test {
         for (int i = 0; i < temp.size(); i++) {
             array[i] = temp.get(i);
         }
-        //printArray(arraystring);
+        printArray(array);
         //System.out.println("");
         long preTime = System.currentTimeMillis();
-        //bubbleSort(arraystring);
-        //choiceSort(arraystring);
-        //choiceSort2(arraystring);
-        //Arrays.sort(arraystring);
-        quickSort(array, 0, array.length - 1);
-        //insertionSort(arraystring);
+        //bubbleSort(array);
+        //choiceSort(array);
+        //choiceSort2(array);
+        //Arrays.sort(array);
+        //quickSort(array, 0, array.length - 1);
+        //insertionSort(array);
+        bubbleSort2(array);
         System.out.println(String.valueOf(System.currentTimeMillis() - preTime));
-        //printArray(arraystring);
+        printArray(array);
     }
 
     private static void printArray(int[] array) {
@@ -58,6 +59,17 @@ public class Test {
             }
             if (!change) {
                 return;
+            }
+        }
+    }
+
+    private static void bubbleSort2(int[] array) {
+        int size = array.length;
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < size - 1 - i; j++) {
+                if (array[j] > array[j + 1]) {
+                    swap(array, j, j +1);
+                }
             }
         }
     }
