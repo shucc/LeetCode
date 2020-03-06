@@ -5,7 +5,7 @@ package org.cchao.leetcode.offer;
  * @Date on 2020/3/2
  * @Description
  */
-public class Offer4_55 {
+public class Offer4_55_1 {
     public int maxDepth(TreeNode root) {
         if (null == root) {
             return 0;

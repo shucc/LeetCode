@@ -8,7 +8,7 @@ import java.util.List;
  * @Date on 2020/3/4
  * @Description 从上到下打印二叉树 II
  */
-public class Offer12_32 {
+public class Offer12_32_2 {
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         if (null == root) {
