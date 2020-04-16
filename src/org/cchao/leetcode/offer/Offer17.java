@@ -5,7 +5,7 @@ package org.cchao.leetcode.offer;
  * @Date on 2020/3/2
  * @Description 打印从1到最大的n位数
  */
-public class Offer3_17 {
+public class Offer17 {
     public int[] printNumbers(int n) {
         int number = 1;
         while (n > 0) {

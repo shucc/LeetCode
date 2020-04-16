@@ -5,7 +5,7 @@ package org.cchao.leetcode.offer;
  * @Date on 2020/3/10
  * @Description 平衡二叉树
  */
-public class Offer24_55_2 {
+public class Offer55_2 {
     public boolean isBalanced(TreeNode root) {
         if (null == root) {
             return true;

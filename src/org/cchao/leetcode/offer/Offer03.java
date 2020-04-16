@@ -5,7 +5,7 @@ package org.cchao.leetcode.offer;
  * @Date on 2020/3/5
  * @Description 数组中重复的数字
  */
-public class Offer16_03 {
+public class Offer03 {
     public int findRepeatNumber(int[] nums) {
         int[] temp = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {

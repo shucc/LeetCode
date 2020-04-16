@@ -7,7 +7,7 @@ import java.util.Stack;
  * @Date on 2020/3/10
  * @Description 包含min函数的栈
  */
-public class Offer23_30 {
+public class Offer30 {
     class MinStack {
 
         private Stack<Integer> stack;

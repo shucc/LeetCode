@@ -5,7 +5,7 @@ package org.cchao.leetcode.offer;
  * @Date on 2020/3/3
  * @Description 合并两个排序的链表
  */
-public class Offer9_25 {
+public class Offer25 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode res = new ListNode(0);
         ListNode node = res;

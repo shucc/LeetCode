@@ -5,7 +5,7 @@ package org.cchao.leetcode.offer;
  * @Date on 2020/3/6
  * @Description 和为s的两个数字
  */
-public class Offer19_57 {
+public class Offer57_1 {
     public int[] twoSum(int[] nums, int target) {
         int start = 0;
         int end = nums.length - 1;

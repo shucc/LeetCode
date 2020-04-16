@@ -8,7 +8,7 @@ import java.util.List;
  * @Date on 2020/3/4
  * @Description 和为s的连续正数序列
  */
-public class Offer14_57 {
+public class Offer57_2 {
     public int[][] findContinuousSequence(int target) {
         List<List<Integer>> res = new ArrayList<>();
         List<Integer> cur;

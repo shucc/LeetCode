@@ -5,7 +5,7 @@ package org.cchao.leetcode.offer;
  * @Date on 2020/3/2
  * @Description 替换空格
  */
-public class Offer6_5 {
+public class Offer5 {
     public String replaceSpace(String s) {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {

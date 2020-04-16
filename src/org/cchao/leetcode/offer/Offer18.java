@@ -5,7 +5,7 @@ package org.cchao.leetcode.offer;
  * @Date on 2020/3/9
  * @Description 删除链表的节点
  */
-public class Offer22_18 {
+public class Offer18 {
     public ListNode deleteNode(ListNode head, int val) {
         ListNode curNode = new ListNode(0);
         curNode.next = head;

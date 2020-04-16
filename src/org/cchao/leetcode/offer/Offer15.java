@@ -5,7 +5,7 @@ package org.cchao.leetcode.offer;
  * @Date on 2020/3/3
  * @Description 二进制中1的个数
  */
-public class Offer11_15 {
+public class Offer15 {
     public int hammingWeight(int n) {
         int num = 0;
         while (n != 0) {

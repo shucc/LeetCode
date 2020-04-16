@@ -8,7 +8,7 @@ import java.util.List;
  * @Date on 2020/3/4
  * @Description 二叉搜索树的第k大节点
  */
-public class Offer13_54 {
+public class Offer54 {
 
     private int result = -1;
     private int count = 0;

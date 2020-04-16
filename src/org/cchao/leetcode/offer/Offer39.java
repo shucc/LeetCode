@@ -5,7 +5,7 @@ package org.cchao.leetcode.offer;
  * @Date on 2020/3/6
  * @Description 数组中出现次数超过一半的数字
  */
-public class Offer18_39 {
+public class Offer39 {
     public int majorityElement(int[] nums) {
         int count = 0;
         int cur = nums[0];

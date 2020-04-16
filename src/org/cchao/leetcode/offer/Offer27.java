@@ -5,7 +5,7 @@ package org.cchao.leetcode.offer;
  * @Date on 2020/3/2
  * @Description
  */
-public class Offer5_27 {
+public class Offer27 {
     public TreeNode mirrorTree(TreeNode root) {
         if (null == root) {
             return null;

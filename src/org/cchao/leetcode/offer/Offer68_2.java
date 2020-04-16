@@ -5,7 +5,7 @@ package org.cchao.leetcode.offer;
  * @Date on 2020/3/6
  * @Description 二叉树的最近公共祖先
  */
-public class Offer17_68_2 {
+public class Offer68_2 {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (null == root || root == p || root == q) {
             return root;

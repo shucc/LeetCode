@@ -5,7 +5,7 @@ package org.cchao.leetcode.offer;
  * @Date on 2020/3/9
  * @Description 第一个只出现一次的字符
  */
-public class Offer25_50 {
+public class Offer50 {
     public char firstUniqChar(String s) {
         if (s.length() == 0) {
             return ' ';
@@ -30,7 +30,7 @@ public class Offer25_50 {
     }
 
     public static void main(String[] args) {
-        Offer25_50 offer23_50 = new Offer25_50();
+        Offer50 offer23_50 = new Offer50();
         System.out.println(offer23_50.firstUniqChar(""));
     }
 }

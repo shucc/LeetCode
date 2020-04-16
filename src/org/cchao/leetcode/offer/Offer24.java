@@ -5,7 +5,7 @@ package org.cchao.leetcode.offer;
  * @Date on 2020/3/3
  * @Description 反转链表
  */
-public class Offer8_24 {
+public class Offer24 {
     public ListNode reverseList(ListNode head) {
         if (null == head) {
             return null;
