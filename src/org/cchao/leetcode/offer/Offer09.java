@@ -7,7 +7,7 @@ import java.util.Stack;
  * @Date on 2020/3/3
  * @Description 用两个栈实现队列
  */
-public class Offer9 {
+public class Offer09 {
     class CQueue {
 
         Stack<Integer> stack;

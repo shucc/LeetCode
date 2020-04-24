@@ -7,12 +7,23 @@ package org.cchao.leetcode.offer;
  */
 public class Offer28 {
 
-    private boolean hasLeftRight(TreeNode root) {
+    public boolean isSymmetric(TreeNode root) {
         if (null == root) {
             return true;
         }
-        boolean left = hasLeftRight(root.left);
-        boolean right = hasLeftRight(root.right);
-        return left && right;
+        return isSymmetric(root.left, root.right);
+    }
+
+    private boolean isSymmetric(TreeNode leftNode, TreeNode rightNode) {
+        if (null == leftNode && null == rightNode) {
+            return true;
+        }
+        if (null == leftNode || null == rightNode) {
+            return false;
+        }
+        if (leftNode.val != rightNode.val) {
+            return false;
+        }
+        return isSymmetric(leftNode.left, rightNode.right) && isSymmetric(leftNode.right, rightNode.left);
     }
 }

@@ -5,7 +5,7 @@ package org.cchao.leetcode.offer;
  * @Date on 2020/3/2
  * @Description 从尾到头打印链表
  */
-public class Offer6 {
+public class Offer06 {
     public int[] reversePrint(ListNode head) {
         ListNode node = head;
         int num = 0;
