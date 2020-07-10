@@ -20,4 +20,19 @@ public class Offer68_2 {
         }
         return root;
     }
+
+    public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+        if (null == root || root == p || root == q) {
+            return root;
+        }
+        TreeNode leftNode = lowestCommonAncestor2(root.left, p, q);
+        TreeNode rightNode = lowestCommonAncestor2(root.right, p, q);
+        if (null == leftNode) {
+            return rightNode;
+        }
+        if (null == rightNode) {
+            return leftNode;
+        }
+        return root;
+    }
 }

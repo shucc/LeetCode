@@ -33,4 +33,13 @@ public class Offer68_1 {
         }
         return process(root.right, minNode, maxNode);
     }
+
+    public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+        if (p.val < root.val && q.val < root.val) {
+            return lowestCommonAncestor2(root.left, p, q);
+        } else if (p.val > root.val && q.val > root.val) {
+            return lowestCommonAncestor2(root.right, p, q);
+        }
+        return root;
+    }
 }

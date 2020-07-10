@@ -20,4 +20,25 @@ public class Offer22 {
         }
         return head;
     }
+
+    /**
+     * 双指针法
+     * @param head
+     * @param k
+     * @return
+     */
+    public ListNode getKthFromEnd2(ListNode head, int k) {
+        ListNode before = head;
+        //before先走k步
+        while (k > 0) {
+            before = before.next;
+            k--;
+        }
+        ListNode after = head;
+        while (before != null) {
+            before = before.next;
+            after = after.next;
+        }
+        return after;
+    }
 }
