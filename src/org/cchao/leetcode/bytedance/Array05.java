@@ -7,12 +7,12 @@ import java.util.Arrays;
  * @Date on 2020/7/14
  * @Description 数组中第K大的元素
  */
-public class Arrays05 {
+public class Array05 {
 
     public static void main(String[] args) {
         int[] temp = new int[] {3,2,1,5,6,4};
         System.out.println(Arrays.toString(temp));
-        System.out.println(new Arrays05().findKthLargest2(temp, 2));
+        System.out.println(new Array05().findKthLargest2(temp, 2));
         System.out.println(Arrays.toString(temp));
     }
 
