@@ -21,4 +21,15 @@ public class Offer24 {
         }
         return pre;
     }
+
+    public ListNode reverseList2(ListNode head) {
+        ListNode tempNode = null;
+        while (head != null) {
+            ListNode node = head;
+            head = head.next;
+            node.next = tempNode;
+            tempNode = node;
+        }
+        return tempNode;
+    }
 }

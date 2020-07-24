@@ -9,7 +9,7 @@ public class Offer42 {
 
     public static void main(String[] args) {
         int[] temp = new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4};
-        System.out.println("结果:" + maxSubArray(temp));
+        System.out.println("结果:" + maxSubArray2(temp));
     }
 
     public static int maxSubArray(int[] nums) {
@@ -29,5 +29,23 @@ public class Offer42 {
             }
         }
         return max;
+    }
+
+    /**
+     * dp[i]表示以nums[i]结尾的最大连续子序和，则dp[i]=Math.max(nums[i],dp[i-1]+nums[i])
+     * @param nums
+     * @return
+     */
+    public static int maxSubArray2(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        int maxProfit = nums[0];
+        int pre = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            pre = Math.max(nums[i], pre + nums[i]);
+            maxProfit = Math.max(maxProfit, pre);
+        }
+        return maxProfit;
     }
 }

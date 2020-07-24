@@ -9,7 +9,7 @@ public class Offer63 {
 
     public static void main(String[] args) {
         int[] temp = new int[]{7, 1, 5, 3, 6, 4};
-        System.out.println("结果：" + maxProfit(temp));
+        System.out.println("结果：" + maxProfit2(temp));
     }
 
     /**
@@ -33,4 +33,21 @@ public class Offer63 {
         }
         return dp[prices.length - 1];
     }
+
+    public static int maxProfit2(int[] prices) {
+        if (null == prices || prices.length == 0) {
+            return 0;
+        }
+        int maxProfit = 0;
+        int pre = prices[0];
+        for (int i =1; i < prices.length; i++) {
+            if (prices[i] <= pre) {
+                pre = prices[i];
+            } else {
+                maxProfit = Math.max(prices[i] - pre, maxProfit);
+            }
+        }
+        return maxProfit;
+    }
+
 }

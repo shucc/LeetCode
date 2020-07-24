@@ -41,4 +41,18 @@ public class Offer22 {
         }
         return after;
     }
+
+    public ListNode getKthFromEnd3(ListNode head, int k) {
+        ListNode preNode = head;
+        while (k > 0) {
+            preNode = preNode.next;
+            k--;
+        }
+        while (preNode != null) {
+            preNode = preNode.next;
+            head = head.next;
+        }
+        return head;
+    }
+
 }
