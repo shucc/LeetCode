@@ -1,5 +1,7 @@
 package org.cchao.leetcode.offer;
 
+import java.util.Arrays;
+
 /**
  * @author cchen6
  * @Date on 2020/3/6
@@ -10,18 +12,13 @@ public class Offer21 {
         int start = 0;
         int end = nums.length - 1;
         while (start < end) {
-            if ((nums[start] % 2) == 0 && (nums[end] % 2) == 1) {
-                swap(nums, start, end);
+            while (start < end && (nums[start] % 2) == 1) {
                 start++;
-                end--;
-            } else if ((nums[start] % 2) == 1 && (nums[end] % 2) == 0){
-                start++;
-                end--;
-            } else if ((nums[start] % 2) == 1) {
-                start++;
-            } else {
+            }
+            while (start < end && (nums[end] % 2) == 0) {
                 end--;
             }
+            swap(nums, start, end);
         }
         return nums;
     }
@@ -39,5 +36,6 @@ public class Offer21 {
         Offer21 offer19_21 = new Offer21();
         int[] temp = new int[]{2,16,3,5,13,1,16,1,12,18,11,8,11,11,5,1};
         offer19_21.exchange(temp);
+        System.out.println(Arrays.toString(temp));
     }
 }

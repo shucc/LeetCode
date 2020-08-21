@@ -1,6 +1,7 @@
 package org.cchao.leetcode.offer;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -35,24 +36,24 @@ public class Offer34 {
     }
 
     private List<List<Integer>> resList = new ArrayList<>();
+    private LinkedList<Integer> path = new LinkedList<>();
 
     public List<List<Integer>> pathSum(TreeNode root, int sum) {
-        process(root, new ArrayList<>(), sum);
+        process(root,  sum);
         return resList;
     }
 
-    private void process(TreeNode root, List<Integer> tempList, int sum) {
+    private void process(TreeNode root, int sum) {
         if (null == root) {
             return;
         }
-        tempList.add(root.val);
-        if (root.left == null && root.right == null) {
-            if (root.val == sum) {
-                resList.add(tempList);
-            }
-            return;
+        path.add(root.val);
+        sum -= root.val;
+        if (sum == 0&& root.left == null && root.right == null) {
+            resList.add(new LinkedList<>(path));
         }
-        process(root.left, new ArrayList<>(tempList), sum - root.val);
-        process(root.right, new ArrayList<>(tempList), sum - root.val);
+        process(root.left, sum);
+        process(root.right, sum);
+        path.removeLast();
     }
 }
