@@ -1,5 +1,7 @@
 package org.cchao.leetcode.offer;
 
+import java.util.Arrays;
+
 /**
  * @author cchen6
  * @Date on 2020/5/5
@@ -8,6 +10,16 @@ package org.cchao.leetcode.offer;
 public class Offer56_1 {
 
     public static void main(String[] args) {
-        System.out.print("结果：" + (4 ^ 7 ^ 7));
+        Offer56_1 offer56_1 = new Offer56_1();
+        System.out.print("结果：" + Arrays.toString(offer56_1.singleNumbers(new int[] {4, 6, 6, 1})));
+    }
+
+    public int[] singleNumbers(int[] nums) {
+        int res = 0;
+        for (int i = 0; i < nums.length; i++) {
+            res ^= nums[i];
+        }
+
+        return nums;
     }
 }
