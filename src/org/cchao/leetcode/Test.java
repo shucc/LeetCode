@@ -1,5 +1,9 @@
 package org.cchao.leetcode;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * @author cchen6
  * @Date on 2020/7/21
@@ -15,7 +19,30 @@ public class Test {
         new Thread(threadA).start();
     }
 
-    private static class Counter {
+    public static int[] searchRange(int[] nums, int target) {
+        int leftIndex = binarySearch(nums, target);
+        int endIndex = binarySearch(nums, target + 1) - 1;
+        if (leftIndex <= endIndex && endIndex < nums.length && nums[leftIndex] == target && nums[endIndex] == target) {
+            return new int[]{leftIndex, endIndex};
+        }
+        return new int[]{-1, -1};
+    }
+
+    public static int binarySearch(int[] nums, int target) {
+        int left = 0, right = nums.length - 1, ans = nums.length;
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            if (nums[mid] >= target) {
+                right = mid - 1;
+                ans = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return ans;
+    }
+
+    public static class Counter {
         boolean isA = true;
         int count = 0;
     }

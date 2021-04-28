@@ -1,6 +1,6 @@
 package org.cchao.leetcode.offer;
 
-class TreeNode {
+public class TreeNode {
 
     int val;
     TreeNode left;
