@@ -8,15 +8,14 @@ package org.cchao.leetcode.leetcode.bytedance;
 public class Leetcode206 {
 
     public ListNode reverseList(ListNode head) {
-        ListNode preNode = null;
-        ListNode nowNode = null;
-        while (head != null) {
-            nowNode = new ListNode(head.val);
-            nowNode.next = preNode;
-            preNode = nowNode;
+        ListNode prevNode = null;
+        while (null != head) {
+            ListNode nowNode = new ListNode(head.val);
+            nowNode.next = prevNode;
             head = head.next;
+            prevNode = nowNode;
         }
-        return nowNode;
+        return prevNode;
     }
 
     private static class ListNode {

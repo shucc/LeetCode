@@ -69,20 +69,32 @@ public class HeapSort {
     public static void main(String[] args) {
         int a[] = {42, 33, 5, 1, 2, 8, 9, 10};
         System.out.println(Arrays.toString(a));
-        new HeapSort().quickSort(a, 0, a.length - 1, 3);
+        new HeapSort().choiceSort(a);
         System.out.println(Arrays.toString(a));
     }
 
-    private void quickSort(int[] data, int low, int hight, int k) {
+    private void choiceSort(int[] data) {
+        int minIndex;
+        for (int i = 0; i < data.length - 1; i++) {
+            minIndex = i;
+            for (int j = i + 1; j < data.length; j++) {
+                if (data[j] < data[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            if (minIndex != i) {
+                data[i] = data[i] + data[minIndex];
+                data[minIndex] = data[i] - data[minIndex];
+                data[i] = data[i] - data[minIndex];
+            }
+        }
+    }
+
+    private void quickSort(int[] data, int low, int hight) {
         if (low < hight) {
             int middle = getMiddle(data, low, hight);
-            if (data.length - middle == k) {
-                return;
-            } else if (data.length - middle > k) {
-                quickSort(data, middle + 1, hight, k);
-            } else {
-               quickSort(data, 0, middle - 1, k);
-            }
+            quickSort(data, middle + 1, hight);
+            quickSort(data, 0, middle - 1);
         }
     }
 

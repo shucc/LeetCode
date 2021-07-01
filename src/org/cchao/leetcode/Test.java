@@ -1,9 +1,5 @@
 package org.cchao.leetcode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * @author cchen6
  * @Date on 2020/7/21
@@ -11,12 +7,30 @@ import java.util.List;
  */
 public class Test {
 
+    private static Test instance = null;
+
+    private Test() {}
+
+    public static Test getInstance() {
+        if (null == instance) {
+            synchronized (Test.class) {
+                if (null == instance) {
+                    instance = new Test();
+                }
+            }
+        }
+        return instance;
+    }
+
     public static void main(String[] args) {
-        Counter counter = new Counter();
-        ThreadA threadA = new ThreadA(counter);
-        ThreadB threadB = new ThreadB(counter);
-        new Thread(threadB).start();
-        new Thread(threadA).start();
+//        Counter counter = new Counter();
+//        ThreadA threadA = new ThreadA(counter);
+//        ThreadB threadB = new ThreadB(counter);
+//        new Thread(threadB).start();
+//        new Thread(threadA).start();
+//        int[] temp = new int[]{2, 3, 4, 5, 6, 7, 8, 8, 9, 10};
+//        int[] res = searchRange(temp, 8);
+//        System.out.println("Result:" + res[0] + "-->" + res[1]);
     }
 
     public static int[] searchRange(int[] nums, int target) {
@@ -28,6 +42,12 @@ public class Test {
         return new int[]{-1, -1};
     }
 
+    /**
+     * 返回第一个小于等于target的值的下标
+     * @param nums
+     * @param target
+     * @return
+     */
     public static int binarySearch(int[] nums, int target) {
         int left = 0, right = nums.length - 1, ans = nums.length;
         while (left <= right) {
