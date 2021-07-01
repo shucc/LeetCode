@@ -1,6 +1,7 @@
 .idea
 .gradle
 *.iml
+*.json
 .iml
 /out
 /bin
