@@ -14,7 +14,7 @@ public class Leetcode25 {
             tempNode = tempNode.next;
         }
         Leetcode25 leetcode25 = new Leetcode25();
-        ListNode resNode = leetcode25.reverseKGroup(rootNode.next, 3);
+        ListNode resNode = leetcode25.reverseKGroup(rootNode.next, 4);
         leetcode25.printNode(rootNode.next);
         leetcode25.printNode(resNode);
     }
